@@ -6,15 +6,17 @@ import { useEffect, useState } from "react";
 
 
 export default function Post(){
-    const[post, setPost] = useState([])
+    const[post, setPost] = useState([]);
 
     useEffect(()=>{
-        fetch('')
+        fetch('https://dummyjson.com/products')
         .then((response)=>response.json())
         .then((res)=>{
-            setPost(res.posts)
+            console.log(res)
+            setPost(res.products)
         })
     },[])
+    // console.log(post)
 
     return(
         <main>
